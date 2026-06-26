@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ML Score Predictor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="bg"></div>
+
+<div class="card">
+    <h1 class="title">📊 Student Performance Predictor</h1>
+    <p class="subtitle">AI-powered score prediction based on study hours</p>
+
+    <input type="number" id="hours" placeholder="Enter study hours (e.g. 5)">
+
+    <button onclick="predictScore()">
+        Predict Score
+        <span class="loader" id="loader"></span>
+    </button>
+
+    <div class="result-box">
+        <h2 id="result">Waiting for input...</h2>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

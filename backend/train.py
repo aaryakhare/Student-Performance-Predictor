@@ -4,7 +4,7 @@ from sklearn.linear_model import LinearRegression
 import joblib
 from sklearn.metrics import r2_score
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent
 
 data_path = BASE_DIR / "data" / "student_scores.csv"
 model_path = BASE_DIR / "models" / "student_model.pkl"

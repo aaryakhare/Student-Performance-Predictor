@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: #0f172a;
+}
+
+/* Animated background */
+.bg {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, #4facfe, #00f2fe, #7c3aed, #06b6d4);
+    animation: moveBG 10s linear infinite;
+    opacity: 0.3;
+}
+
+@keyframes moveBG {
+    0% { transform: translate(0,0); }
+    50% { transform: translate(-20%, -20%); }
+    100% { transform: translate(0,0); }
+}
+
+.card {
+    position: relative;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(15px);
+    padding: 30px;
+    border-radius: 16px;
+    width: 380px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+    animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.title {
+    color: white;
+    font-size: 22px;
+}
+
+.subtitle {
+    color: #cbd5e1;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #4facfe, #00f2fe);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    position: relative;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #0a686de0;
+}
+
+.result-box {
+    margin-top: 20px;
+    color: white;
+    font-size: 18px;
+    animation: pop 0.5s ease;
+}
+
+@keyframes pop {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+
+.loader {
+    width: 12px;
+    height: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.855);
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    display: none;
+    position: absolute;
+    right: 15px;
+    top: 14px;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
