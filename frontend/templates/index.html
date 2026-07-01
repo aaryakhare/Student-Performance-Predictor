@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>ML Score Predictor</title>
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
@@ -25,6 +25,5 @@
     </div>
 </div>
 
-<script src="script.js"></script>
-</body>
+<script src="{{ url_for('static', filename='script.js') }}"></script></body>
 </html>

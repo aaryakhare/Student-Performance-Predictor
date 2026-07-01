@@ -1,16 +1,24 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 import joblib
 import pandas as pd
 from pathlib import Path
 from flask_cors import CORS
 
-app = Flask(__name__)
+BACKEND_DIR = Path(__file__).resolve().parent
+PROJECT_DIR = BACKEND_DIR.parent
+model_path = BACKEND_DIR / "models" / "student_model.pkl"
+app = Flask(
+    __name__,
+    template_folder=str(PROJECT_DIR / "frontend" / "templates"),
+    static_folder=str(PROJECT_DIR / "frontend" / "static")
+)
 CORS(app)
 
-BASE_DIR = Path(__file__).resolve().parent
-model_path = BASE_DIR / "models" / "student_model.pkl"
-
 model = joblib.load(model_path)
+
+@app.route("/")
+def home():
+    return render_template("index.html")
 
 @app.route("/predict", methods=["POST"])
 def predict():
